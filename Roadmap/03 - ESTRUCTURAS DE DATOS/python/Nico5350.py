@@ -77,6 +77,7 @@ def my_agenda():
     while True :
 
         print("")
+        print("1. Ingrese el nombre que desea buscar")
         print("2. Inserción de contacto")
         print("3. Actualización de contacto")
         print("4. Eliminacion de contacto")
@@ -88,17 +89,19 @@ def my_agenda():
             case "1":
                 nombre=input("Inserte el nombre de contacto: ")
                 if nombre in agenda:
-                    print (f"El contacto {nombre} esta en la agenda {agenda[nombre]}.")
+                    print (f"El contacto {nombre} esta en la agenda y el numero es: {agenda[nombre]}.")
                 else:
                     print(f"El contacto {nombre} no esta en la agenda")
                 
             case "2":
                 nombre=input("Inserte el nuevo nombre de contacto: ")
                 insert_contact()
+                print(agenda[nombre])
             case "3":
                 nombre=input("Inserte el nuevo nombre de contacto: ")
                 if nombre not in agenda:
                     insert_contact()
+                    print(agenda[nombre])
                 else:
                     print(f"El contacto {nombre} no existe")
 
